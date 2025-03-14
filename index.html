@@ -19,21 +19,23 @@
             scroll-behavior: smooth;
         }
         nav {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             padding: 10px 0;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            z-index: 100;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
         }
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
+            display: flex;
         }
         nav ul li {
-            display: inline;
             margin: 0 15px;
         }
         nav ul li a {
@@ -99,27 +101,20 @@
             color: white;
             text-decoration: none;
         }
-        .proyectos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .proyecto {
-            width: 280px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 8px rgba(0,0,0,0.2);
-        }
-        .proyecto img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .proyecto p {
-            margin: 10px;
+        @media (max-width: 768px) {
+            nav {
+                display: block;
+                text-align: center;
+                padding: 10px;
+            }
+            nav ul {
+                display: block;
+                padding: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -129,55 +124,32 @@
             <li><a href="#sobre-mi">Sobre Mí</a></li>
             <li><a href="#experiencia">Experiencia</a></li>
             <li><a href="#educacion">Educación</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
     <div class="container">
         <h1>José Enrique Gallego León</h1>
-        
         <div class="section" id="sobre-mi">
             <h2>Sobre Mí</h2>
-            <p>Soy un <span class="highlight">profesional apasionado por la informática</span>, con una gran capacidad de adaptación y trabajo en equipo. Siempre en constante aprendizaje para mejorar mis habilidades y aportar soluciones innovadoras.</p>
+            <p>Soy un <span class="highlight">profesional apasionado por la informática</span>, con gran capacidad de adaptación y trabajo en equipo.</p>
         </div>
-        
         <div class="section" id="experiencia">
             <h2>Experiencia Laboral</h2>
-            <p><strong>Programador de Aplicaciones - Alfinf (2024)</strong></p>
-            <p>Desarrollé aplicaciones con <span class="highlight">Microsoft Access</span> y <span class="highlight">Android Studio</span>, utilizando lenguajes como <span class="highlight">Visual Basic</span> y <span class="highlight">Kotlin</span>. Esto me permitió adquirir experiencia en la resolución de problemas técnicos y en el desarrollo de soluciones eficientes.</p>
-             </div>
-        
+            <p><strong>Programador - Alfinf (2024)</strong></p>
+            <p>Desarrollo de aplicaciones con <span class="highlight">Visual Basic</span> y <span class="highlight">Kotlin</span>.</p>
+        </div>
         <div class="section" id="educacion">
-            <h2>Educación y Formación</h2>
+            <h2>Educación</h2>
             <p><strong>Desarrollo de Aplicaciones Multiplataformas (DAM)</strong> - I.E.S La Marisma</p>
             <p><strong>Curso de Especialización en Ciberseguridad</strong> - I.E.S La Marisma</p>
             <p>Estos estudios me han permitido desarrollar habilidades en <span class="highlight">programación</span>, <span class="highlight">seguridad informática</span> y <span class="highlight">desarrollo de software</span>, fortaleciendo mi perfil profesional.</p>
         </div>
-        
-        <div class="section" id="proyectos">
-            <h2>Proyectos Destacados</h2>
-            <div class="proyectos">
-                <div class="proyecto">
-                    <img src="https://source.unsplash.com/random/400x300?tech" alt="Proyecto 1">
-                    <p>Aplicación móvil desarrollada con Kotlin y Firebase.</p>
-                </div>
-                <div class="proyecto">
-                    <img src="https://source.unsplash.com/random/400x300?code" alt="Proyecto 2">
-                    <p>Sitio web responsivo utilizando HTML, CSS y JavaScript.</p>
-                </div>
-                <div class="proyecto">
-                    <img src="https://source.unsplash.com/random/400x300?computer" alt="Proyecto 3">
-                    <p>Proyecto de ciberseguridad enfocado en la protección de datos.</p>
-                </div>
-            </div>
-        </div>
-        
         <div class="section" id="contacto">
             <h2>Contacto</h2>
             <p class="contacto"><i class="fas fa-envelope"></i> Email: <a href="mailto:gallegoleonjoseenrique734@gmail.com">gallegoleonjoseenrique734@gmail.com</a></p>
             <p class="contacto"><i class="fas fa-phone"></i> Teléfono: <a href="tel:+34674889125">+34 674 889 125</a></p>
         </div>
-
+        <a href="./cv.pdf" class="button" download>Descargar CV</a>
     </div>
 </body>
 </html>
