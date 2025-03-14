@@ -18,43 +18,43 @@
             text-align: center;
             scroll-behavior: smooth;
         }
-        nav {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 10px 0;
+        .menu {
             position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
             z-index: 1000;
-            display: flex;
-            justify-content: center;
         }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
+        .menu i {
+            color: white;
+            font-size: 1.5em;
         }
-        nav ul li {
-            margin: 0 15px;
+        .menu-items {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
         }
-        nav ul li a {
+        .menu-items a {
+            display: block;
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            margin: 5px 0;
         }
         .container {
             max-width: 900px;
-            margin: 80px auto 50px;
+            margin: 50px auto;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         h1 {
             font-size: 2.5em;
@@ -71,17 +71,9 @@
             line-height: 1.8;
             font-size: 1.1em;
         }
-        .section {
-            margin-bottom: 30px;
-        }
         .contacto {
-            margin-top: 20px;
             font-weight: bold;
             font-size: 1.2em;
-        }
-        .highlight {
-            color: #ffdd57;
-            font-weight: bold;
         }
         .button {
             display: inline-block;
@@ -92,51 +84,32 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            transition: background 0.3s ease-in-out;
         }
         .button:hover {
             background-color: #ffd700;
         }
-        a {
-            color: white;
-            text-decoration: none;
-        }
-        @media (max-width: 768px) {
-            nav {
-                display: block;
-                text-align: center;
-                padding: 10px;
-            }
-            nav ul {
-                display: block;
-                padding: 0;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-        }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#educacion">Educación</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="menu" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu-items" id="menuItems">
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#educacion">Educación</a>
+        <a href="#contacto">Contacto</a>
+    </div>
     <div class="container">
         <h1>José Enrique Gallego León</h1>
         <div class="section" id="sobre-mi">
             <h2>Sobre Mí</h2>
-            <p>Soy un <span class="highlight">profesional apasionado por la informática</span>, con gran capacidad de adaptación y trabajo en equipo.</p>
+            <p>Soy un profesional apasionado por la informática con gran capacidad de adaptación y trabajo en equipo.</p>
         </div>
         <div class="section" id="experiencia">
             <h2>Experiencia Laboral</h2>
             <p><strong>Programador - Alfinf (2024)</strong></p>
-            <p>Desarrollo de aplicaciones con <span class="highlight">Visual Basic</span> y <span class="highlight">Kotlin</span>.</p>
+            <p>Desarrollo de aplicaciones con Visual Basic y Kotlin.</p>
         </div>
         <div class="section" id="educacion">
             <h2>Educación</h2>
@@ -151,5 +124,15 @@
         </div>
         <a href="./cv.pdf" class="button" download>Descargar CV</a>
     </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menuItems');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
